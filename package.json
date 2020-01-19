@@ -1,0 +1,32 @@
+{
+  "name": "fft",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pabloparada/fft.git"
+  },
+  "scripts": {
+    "install": "node-pre-gyp install --fallback-to-build",
+    "package": "node-pre-gyp configure build package",
+    "release": "NODE_PRE_GYP_GITHUB_TOKEN=2b2ee9b4d1faacdc60f8037cbb034701281292c5 node-pre-gyp-github publish --release",
+    "draft": "NODE_PRE_GYP_GITHUB_TOKEN=2b2ee9b4d1faacdc60f8037cbb034701281292c5 node-pre-gyp-github publish"
+  },
+  "binary": {
+    "module_name": "fft",
+    "module_path": "./lib/binding/{configuration}/{node_abi}-{platform}-{arch}/",
+    "package_name": "{module_name}-v{version}-{node_abi}-{platform}-{arch}.tar.gz",
+    "host": "https://github.com/pabloparada/fft/releases/download/",
+    "remote_path": "{version}"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-addon-api": "^2.0.0",
+    "node-pre-gyp": "^0.14.0",
+    "node-pre-gyp-github": "^1.4.3",
+    "publish": "^0.6.0"
+  }
+}
